@@ -1,5 +1,5 @@
 import { HubBaseSqlRepositoryService } from '../../../hub-core/repository/hub-base-sql-repository.service';
-import { ProductEntity } from '../dtos/product.entity';
+import { ProductDbEntity } from '../dtos/product-db.entity';
 import { FilterProductDTO } from '../dtos/fitler-product.dto';
 import { CreateProductDTO } from '../dtos/create-product.dto';
 import { UpdateProductDTO } from '../dtos/update-product.dto';
@@ -9,14 +9,14 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class ProductSqlRepositoryService extends HubBaseSqlRepositoryService<
-  ProductEntity,
+  ProductDbEntity,
   FilterProductDTO,
   CreateProductDTO,
   UpdateProductDTO
 > {
   constructor(
-    @InjectRepository(ProductEntity)
-    protected readonly repository: Repository<ProductEntity>,
+    @InjectRepository(ProductDbEntity)
+    protected readonly repository: Repository<ProductDbEntity>,
   ) {
     super();
   }

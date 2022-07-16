@@ -3,7 +3,7 @@ import { Product } from '../domain/entities/product.interface';
 import { Column, Entity } from 'typeorm';
 
 @Entity('products')
-export class ProductEntity extends HubBaseSqlDBEntity implements Product {
+export class ProductDbEntity extends HubBaseSqlDBEntity implements Product {
   @Column()
   title: string;
 

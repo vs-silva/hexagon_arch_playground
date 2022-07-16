@@ -2,7 +2,9 @@ import { HubBaseApiController } from '../../../hub-core/api/hub-base-api-control
 import { CreateProductDTO } from '../dtos/create-product.dto';
 import { UpdateProductDTO } from '../dtos/update-product.dto';
 import { ProductSqlRepositoryService } from '../repository/product-sql-repository.service';
+import { Controller } from '@nestjs/common';
 
+@Controller()
 export class ProductsController
   implements HubBaseApiController<CreateProductDTO, UpdateProductDTO>
 {
