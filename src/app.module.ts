@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { HubSqlDatabaseModule } from './hub-databases/hub-sql-database.module';
+import { HubDomainsModule } from './hub-domains/hub-domains.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [HubSqlDatabaseModule, HubDomainsModule],
 })
 export class AppModule {}
