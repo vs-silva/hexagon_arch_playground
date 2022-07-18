@@ -9,3 +9,16 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: pass123
+
+  msg-broker:
+    container_name: hub-msg-brk
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: root
