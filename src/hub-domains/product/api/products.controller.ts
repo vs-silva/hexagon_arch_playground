@@ -8,9 +8,10 @@ import {
   Get,
   Post,
   Patch,
+  Delete,
   Query,
   Param,
-  ParseUUIDPipe, Delete,
+  ParseUUIDPipe,
 } from '@nestjs/common';
 import { HubBasePaginationDTO } from '../../../hub-core/dtos/hub-base-pagination.dto';
 
@@ -39,7 +40,10 @@ export class ProductsController
   }
 
   @Patch(':id')
-  update(@Param('id', ParseUUIDPipe) id: string, @Body() updateDTO: UpdateProductDTO) {
+  update(
+    @Param('id', ParseUUIDPipe) id: string,
+    @Body() updateDTO: UpdateProductDTO,
+  ) {
     return this.productSqlRepository.update(id, updateDTO);
   }
 
