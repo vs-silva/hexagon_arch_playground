@@ -1,7 +1,7 @@
 export interface HubBaseApiController<CreateDTO, UpdateDTO> {
-  findAll(queryParams);
+  findAll(paginationQuery);
   findById(id);
   create(createDTO: CreateDTO);
-  update(updateDTO: UpdateDTO);
+  update(id, updateDTO: UpdateDTO);
   remove(id);
 }
